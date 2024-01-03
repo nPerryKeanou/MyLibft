@@ -7,35 +7,41 @@ Ctrl + Shift + Z : Rétablir la dernière action annulée.
 Ctrl + C : Copier la sélection.
 Ctrl + X : Couper la sélection.
 Ctrl + V : Coller depuis le presse-papiers.
-Navigation :
 
+
+Navigation :
 Ctrl + P : Ouvrir rapidement un fichier.
 Ctrl + G : Aller à une ligne spécifique.
 Ctrl + \ : Ouvrir ou fermer le panneau de terminal intégré.
 Ctrl + Tab : Basculer entre les fichiers ouverts.
 Ctrl + B : Afficher ou masquer la barre latérale.
-Édition de texte :
 
+
+Édition de texte :
 Ctrl + D : Sélectionner la prochaine occurrence du texte sélectionné.
 Ctrl + Shift + L : Sélectionner toutes les occurrences du texte sélectionné.
 Alt + ↑/↓ : Déplacer une ligne vers le haut ou vers le bas.
 Ctrl + / : Commenter ou décommenter la ligne ou la sélection.
-Rechercher et Remplacer :
 
+
+Rechercher et Remplacer :
 Ctrl + F : Rechercher dans le fichier.
 Ctrl + H : Remplacer dans le fichier.
 Ctrl + Shift + F : Rechercher dans tous les fichiers.
 Ctrl + Shift + H : Remplacer dans tous les fichiers.
-Débogage :
 
+
+Débogage :
 F5 : Lancer le débogueur.
 F9 : Ajouter/Supprimer un point d'arrêt.
 F10 : Exécuter jusqu'à la prochaine ligne.
 F11 : Entrer dans une fonction lors du débogage.
+
+
 Terminal :
-
 Ctrl + : Afficher ou masquer le terminal intégré.
-Extensions :
 
+
+Extensions :
 Ctrl + Shift + X : Ouvrir le gestionnaire d'extensions.
 Ces raccourcis peuvent varier légèrement selon votre système d'exploitation. Vous pouvez également personnaliser les raccourcis dans les paramètres de VSCode en fonction de vos préférences.

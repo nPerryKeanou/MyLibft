@@ -2,6 +2,8 @@
 #include "stdio.h"
 #include "unistd.h"
 #include "libft.h"
+#include "stddef.h"
+#include "string.h"
 
 
 
@@ -18,17 +20,6 @@ void    ft_putstr(char *str){
         i++;
     }
 }
-
-size_t ft_strlen(char   *str){
-    size_t i;
-
-    i = 0;
-    while(str[i] != 0){
-        i++;
-    }
-    return(i);
-}
-
 
 /////////////////////////////////////////////////// isalpha, islower, isupper
 /*
@@ -130,3 +121,108 @@ int main(void){
     return(0);
 }
 */
+
+////////////////////////////////////ft_strlen
+//
+/*
+int main(void){
+    char    *a = "bonjour";
+    char    *b = "";
+    char    *c = "b";
+    printf("ft_strlen(bonjour) --> %zu\n", ft_strlen(a));
+    printf("ft_strlen() --> %zu\n", ft_strlen(b));
+    printf("ft_strlen(b) --> %zu\n", ft_strlen(c));
+    return(0);
+}
+*/
+
+////////////////////////////////////////////ft_memset(void *b, int c, size_t len)
+/*
+int main() {
+    // Déclaration d'un tableau d'entiers
+    int myArray[5];
+
+    // Affichage du tableau avant utilisation de ft_memset
+    printf("Avant ft_memset :\n");
+    for (int i = 0; i < 5; i++) {
+        printf("myArray[%d] : %d\n", i, myArray[i]);
+    }
+
+    // Utilisation de ft_memset pour remplir le tableau avec la valeur 42
+    ft_memset(myArray, 42, sizeof(myArray));
+
+    // Affichage du tableau après utilisation de ft_memset
+    printf("\nAprès ft_memset :\n");
+    for (int i = 0; i < 5; i++) {
+        printf("myArray[%d] : %hhu\n", i, (unsigned char)myArray[i]);
+    }
+
+    return 0;
+}
+*/
+/*
+int main(void){
+    char *dst[20]; 
+    const char *src = "bonjour les gens";
+    printf("before ft_memencpy :\n");
+    printf("dst --> %s\n", dst);
+    printf("src ---> %s\n", src);
+    printf("after ft_memcpy :\n");
+    ft_memcpy(dst, src, ft_strlen(src) + 1);
+    printf("---------------");
+    printf("dst --> %s\n", dst);
+    printf("src ---> %s\n", src);
+    return(0);
+}
+*/
+
+
+
+///////////////////////////////////////////////////////ft_memmove
+/*
+int main() {
+    // Déclarer une chaîne de caractères
+    char str[] = "Hello, World!";
+    
+    // Créer un chevauchement en copiant une partie de la chaîne à l'intérieur d'elle-même
+    memmove(str + 7, str + 1, 5);
+
+    // Afficher le résultat
+    printf("Résultat : %s\n", str);
+
+    return 0;
+}
+*/
+
+//////////////////////////////ft_strlcpy()
+/*
+int main() {
+    char destination[20];
+    const char *source = "Hello, World!";
+
+    // Utilisation de la fonction ft_strlcpy
+    size_t result = ft_strlcpy(destination, source, sizeof(destination));
+
+    // Affichage du résultat
+    printf("Résultat de ft_strlcpy : %zu\n", result);
+    printf("Destination : %s\n", destination);
+
+    return 0;
+}
+*/
+
+
+/////////////////////////////////////////ft_strlcat()
+int main() {
+    char destination[20] = "Hello";
+    const char *source = ", World!";
+
+    // Utilisation de la fonction ft_strlcat
+    size_t result = ft_strlcat(destination, source, sizeof(destination));
+
+    // Affichage du résultat
+    printf("Résultat de ft_strlcat : %zu\n", result);
+    printf("Destination : %s\n", destination);
+
+    return 0;
+}
