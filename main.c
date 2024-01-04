@@ -213,6 +213,7 @@ int main() {
 
 
 /////////////////////////////////////////ft_strlcat()
+/*
 int main() {
     char destination[20] = "Hello";
     const char *source = ", World!";
@@ -226,3 +227,70 @@ int main() {
 
     return 0;
 }
+*/
+
+//////////////////////////////////ft_str(r)chr
+/*
+int main() {
+    const char *str = "Hello, World!";
+    char *ptr;
+
+    // Recherche de la première occurrence de 'o' dans la chaîne
+    ptr = strchr(str, 'o');
+    if (ptr != NULL) {
+        printf("Première occurrence de 'o' : %s\n", ptr);
+    } else {
+        printf("'o' non trouvé.\n");
+    }
+
+    // Recherche de la dernière occurrence de 'o' dans la chaîne
+    ptr = strrchr(str, 'o');
+    if (ptr != NULL) {
+        printf("Dernière occurrence de 'o' : %s\n", ptr);
+    } else {
+        printf("'o' non trouvé.\n");
+    }
+
+    return 0;
+}
+*/
+
+////////////////////////////////////ft_strncmp
+/*
+int main() {
+    char str1[] = "Hello";
+    char str2[] = "Helicopter";
+    
+    int result = strncmp(str1, str2, 3);
+    int result2 = strncmp(str1, str2, 4);
+    int result3 = strncmp(str2, str1, 4);
+    
+    if (result == 0) {
+        printf("Les trois premiers caractères sont identiques.\n");
+    } else if (result < 0) {
+        printf("str1 est inférieur à str2.\n");
+    } else {
+        printf("str1 est supérieur à str2.\n");
+    }
+    printf("\n\n");
+    if (result2 == 0) {
+        printf("Les trois premiers caractères sont identiques.\n");
+    } else if (result2 < 0) {
+        printf("str1 est inférieur à str2.\n");
+    } else {
+        printf("str1 est supérieur à str2.\n");
+    }
+    printf("\n\n");
+    if (result3 == 0) {
+        printf("Les trois premiers caractères sont identiques.\n");
+    } else if (result3 < 0) {
+        printf("str1 est inférieur à str2.\n");
+    } else {
+        printf("str1 est supérieur à str2.\n");
+    }
+
+
+
+    return 0;
+}
+*/
