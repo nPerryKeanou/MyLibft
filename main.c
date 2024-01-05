@@ -391,6 +391,7 @@ int main() {
 */
 
 //////////////////////////////////////////////////ft_atoi
+/*
 int main() {
     const char *str1 = "12345";
     const char *str2 = "-9876";
@@ -402,17 +403,32 @@ int main() {
     const char *str8 = "  +789";
     const char *str9 = "2147483648";  // Dépassement de la capacité d'un int sur 32 bits
     const char *str10 = "  -2147483649";  // Dépassement de la capacité d'un int sur 32 bits
+    const char *str11 = "  -+789";
 
-    printf("atoi(\"%s\") = %d\n", str1, atoi(str1));
-    printf("atoi(\"%s\") = %d\n", str2, atoi(str2));
-    printf("atoi(\"%s\") = %d\n", str3, atoi(str3));
-    printf("atoi(\"%s\") = %d\n", str4, atoi(str4));
-    printf("atoi(\"%s\") = %d\n", str5, atoi(str5));
-    printf("atoi(\"%s\") = %d\n", str6, atoi(str6));
-    printf("atoi(\"%s\") = %d\n", str7, atoi(str7));
-    printf("atoi(\"%s\") = %d\n", str8, atoi(str8));
-    printf("atoi(\"%s\") = %d\n", str9, atoi(str9));
-    printf("atoi(\"%s\") = %d\n", str10, atoi(str10));
+
+    printf("atoi(\"%s\") = %d && ft_atoi(\"%s\") = %d\n", str1, atoi(str1), str1, ft_atoi(str1));
+    printf("atoi(\"%s\") = %d && ft_atoi(\"%s\") = %d\n", str2, atoi(str2), str2, ft_atoi(str2));
+    printf("atoi(\"%s\") = %d && ft_atoi(\"%s\") = %d\n", str3, atoi(str3), str3, ft_atoi(str3));
+    printf("atoi(\"%s\") = %d && ft_atoi(\"%s\") = %d\n", str4, atoi(str4), str4, ft_atoi(str4));
+    printf("atoi(\"%s\") = %d && ft_atoi(\"%s\") = %d\n", str5, atoi(str5), str5, ft_atoi(str5));
+    printf("atoi(\"%s\") = %d && ft_atoi(\"%s\") = %d\n", str6, atoi(str6), str6, ft_atoi(str6));
+    printf("atoi(\"%s\") = %d && ft_atoi(\"%s\") = %d\n", str7, atoi(str7), str7, ft_atoi(str7));
+    printf("atoi(\"%s\") = %d && ft_atoi(\"%s\") = %d\n", str8, atoi(str8), str8, ft_atoi(str8));
+    printf("atoi(\"%s\") = %d && ft_atoi(\"%s\") = %d\n", str9, atoi(str9), str9, ft_atoi(str9));
+    printf("atoi(\"%s\") = %d && ft_atoi(\"%s\") = %d\n", str10, atoi(str10), str10, ft_atoi(str10));
+    printf("atoi(\"%s\") = %d && ft_atoi(\"%s\") = %d\n", str11, atoi(str11), str11, ft_atoi(str11));
+
+    // printf("atoi(\"%s\") = %d\n", str2, atoi(str2));
+    // printf("atoi(\"%s\") = %d\n", str3, atoi(str3));
+    // printf("atoi(\"%s\") = %d\n", str4, atoi(str4));
+    // printf("atoi(\"%s\") = %d\n", str5, atoi(str5));
+    // printf("atoi(\"%s\") = %d\n", str6, atoi(str6));
+    // printf("atoi(\"%s\") = %d\n", str7, atoi(str7));
+    // printf("atoi(\"%s\") = %d\n", str8, atoi(str8));
+    // printf("atoi(\"%s\") = %d\n", str9, atoi(str9));
+    // printf("atoi(\"%s\") = %d\n", str10, atoi(str10));
+    // printf("atoi(\"%s\") = %d\n", str11, atoi(str11));
 
     return 0;
 }
+*/
