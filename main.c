@@ -294,3 +294,125 @@ int main() {
     return 0;
 }
 */
+
+
+///////////////////////////////////////ft_memchr
+/*
+int main() {
+    const char *str = "Hello, World!";
+    size_t n = ft_strlen(str);
+
+    // Test 1: Recherche d'un caractère présent
+    char searchChar1 = 'o';
+    void *result1 = ft_memchr(str, searchChar1, n);
+    printf("Test 1 - Recherche de '%c': %s\n", searchChar1, result1 ? "Trouvé" : "Non trouvé");
+
+    // Test 2: Recherche d'un caractère absent
+    char searchChar2 = 'z';
+    void *result2 = ft_memchr(str, searchChar2, n);
+    printf("Test 2 - Recherche de '%c': %s\n", searchChar2, result2 ? "Trouvé" : "Non trouvé");
+
+    // Test 3: Recherche du caractère nul
+    char searchChar3 = '\0';
+    void *result3 = ft_memchr(str, searchChar3, n);
+    printf("Test 3 - Recherche de '%c': %s\n", searchChar3, result3 ? "Trouvé" : "Non trouvé");
+
+    // Test 4: Recherche dans une chaîne vide
+    const char *emptyStr = "";
+    size_t nEmpty = ft_strlen(emptyStr);
+    char searchChar4 = 'A';
+    void *result4 = ft_memchr(emptyStr, searchChar4, nEmpty);
+    printf("Test 4 - Recherche de '%c' dans une chaîne vide: %s\n", searchChar4, result4 ? "Trouvé" : "Non trouvé");
+
+    // Test 5: Recherche dans une partie spécifique de la chaîne
+    size_t startIdx = 7;  // Commencer la recherche à partir du 8e caractère
+    size_t lenToSearch = 5;  // Rechercher les 5 caractères suivants
+    char searchChar5 = 'W';
+    void *result5 = ft_memchr(str + startIdx, searchChar5, lenToSearch);
+    printf("Test 5 - Recherche de '%c' à partir du 8e caractère: %s\n", searchChar5, result5 ? "Trouvé" : "Non trouvé");
+
+    return 0;
+}
+*/
+
+//////////////////////////////////////////////ft_memcmp
+/*
+int main() {
+    // Test 1: Chaînes identiques
+    char str1[] = "Hello";
+    char str2[] = "Hello";
+    size_t n1 = 5;
+    int result1 = ft_memcmp(str1, str2, n1);
+    printf("Test 1: %d\n", result1);  // Attendu : 0
+
+    // Test 2: Chaînes différentes
+    char str3[] = "Hello";
+    char str4[] = "Hella";
+    size_t n2 = 5;
+    int result2 = ft_memcmp(str3, str4, n2);
+    printf("Test 2: %d\n", result2);  // Attendu : différence entre 'o' et 'a' (111 - 97)
+
+    // Test 3: Comparaison de préfixes
+    char str5[] = "Hello";
+    char str6[] = "Hello, World!";
+    size_t n3 = 5;
+    int result3 = ft_memcmp(str5, str6, n3);
+    printf("Test 3: %d\n", result3);  // Attendu : 0 (les 5 premiers caractères sont identiques)
+
+    // Test 4: Chaînes vides
+    char str7[] = "";
+    char str8[] = "";
+    size_t n4 = 0;
+    int result4 = ft_memcmp(str7, str8, n4);
+    printf("Test 4: %d\n", result4);  // Attendu : 0 (chaînes vides, aucune différence)
+
+    return 0;
+}
+*/
+
+
+/////////////////////////////////////////////////////////ft_strnstr
+/*
+int main() {
+    const char *haystack = "Hello, World!";
+    const char *needle = "World";
+    size_t len = 13;
+
+    char *result = strnstr(haystack, needle, len);
+
+    if (result != NULL) {
+        printf("Needle found at position: %ld\n", result - haystack);
+    } else {
+        printf("Needle not found.\n");
+    }
+
+    return 0;
+}
+*/
+
+//////////////////////////////////////////////////ft_atoi
+int main() {
+    const char *str1 = "12345";
+    const char *str2 = "-9876";
+    const char *str3 = "  42abc";
+    const char *str4 = "0";
+    const char *str5 = "   ";
+    const char *str6 = "123 456";
+    const char *str7 = "abc123";
+    const char *str8 = "  +789";
+    const char *str9 = "2147483648";  // Dépassement de la capacité d'un int sur 32 bits
+    const char *str10 = "  -2147483649";  // Dépassement de la capacité d'un int sur 32 bits
+
+    printf("atoi(\"%s\") = %d\n", str1, atoi(str1));
+    printf("atoi(\"%s\") = %d\n", str2, atoi(str2));
+    printf("atoi(\"%s\") = %d\n", str3, atoi(str3));
+    printf("atoi(\"%s\") = %d\n", str4, atoi(str4));
+    printf("atoi(\"%s\") = %d\n", str5, atoi(str5));
+    printf("atoi(\"%s\") = %d\n", str6, atoi(str6));
+    printf("atoi(\"%s\") = %d\n", str7, atoi(str7));
+    printf("atoi(\"%s\") = %d\n", str8, atoi(str8));
+    printf("atoi(\"%s\") = %d\n", str9, atoi(str9));
+    printf("atoi(\"%s\") = %d\n", str10, atoi(str10));
+
+    return 0;
+}
