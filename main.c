@@ -499,3 +499,36 @@ int main(void){
     return(0);
 }
 */
+
+/////////////////////////////////////ft_strjoin
+/*
+int main(void){
+    const char *a = "";
+    const char *b = "ok mec";
+    const char *c = "                        ";
+
+    char *rslt1 =    ft_strjoin(a, b);
+    char *rslt2 =    ft_strjoin(a, c);
+    char *rslt3 =    ft_strjoin(b, c);
+    char *rslt4 =    ft_strjoin(c, a);
+    char *rslt5 =    ft_strjoin(c, b);
+
+
+    printf("a --> %s\n", a);
+    printf("b --> %s\n", b);
+    printf("c --> %s\n", c);
+    printf("a && b --> %s\n", rslt1);
+    printf("a && c --> %s\n", rslt2);
+    printf("b && c --> %s\n", rslt3);
+    printf("c && a --> %s\n", rslt4);
+    printf("c && b --> %s\n", rslt5);
+    free(rslt1);
+    free(rslt2);
+    free(rslt3);
+    free(rslt4);
+    free(rslt5);
+    return(0);
+}
+*/
+
+
