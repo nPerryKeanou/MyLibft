@@ -432,3 +432,70 @@ int main() {
     return 0;
 }
 */
+
+//////////////////////////////////ft_calloc
+// Fonction pour afficher le contenu d'un tableau
+/*
+void printArray(int* arr, size_t size) {
+    for (size_t i = 0; i < size; i++) {
+        printf("%d ", arr[i]);
+    }
+    printf("\n");
+}
+
+int main() {
+    // Test 1 : Allouer un tableau de 5 entiers
+    int* arr1 = (int*)ft_calloc(5, sizeof(int));
+    printf("Test 1:\n");
+    printArray(arr1, 5);
+    free(arr1);
+
+    // Test 2 : Allouer un tableau de 3 doubles
+    double* arr2 = (double*)ft_calloc(3, sizeof(double));
+    printf("\nTest 2:\n");
+    for (size_t i = 0; i < 3; i++) {
+        printf("%f ", arr2[i]);
+    }
+    printf("\n");
+    free(arr2);
+
+    // Test 3 : Allouer un tableau de 0 éléments (cas spécial)
+    int* arr3 = (int*)ft_calloc(0, sizeof(int));
+    printf("\nTest 3 (taille 0):\n");
+    printArray(arr3, 0);
+    free(arr3);
+
+    return 0;
+}
+*/
+
+///////////////////////////////ft_strdup
+/*
+int main(void){
+    const char *a = "";
+    const char *b = "ok mec, bonjour les gens";
+    char *c = ft_strdup(a);
+    char *d = ft_strdup(b);
+
+    printf("*a --> %s && copie de *a --> %s\n", a, c);
+    printf("\n");
+    free(c);
+    printf("*b --> %s && copie de *b --> %s\n", b, d);
+    printf("\n");
+    free(d);
+    return(0);
+}
+*/
+
+//////////////////////////////////ft_substr
+/*
+int main(void){
+    char *a = "abcdefghijklmnopqrstuvwxyz";
+    printf("a --> %s\n", a);
+    printf("ft_substr(a, 2, 10) ---> %s\n", ft_substr(a, 2, 10));
+    printf("ft_substr(a, 3, 10) ---> %s\n", ft_substr(a, 3, 10));
+    printf("ft_substr(a, 4, 10) ---> %s\n", ft_substr(a, 4, 10));
+    printf("ft_substr(a, 5, 10) ---> %s\n", ft_substr(a, 5, 10));
+    return(0);
+}
+*/
