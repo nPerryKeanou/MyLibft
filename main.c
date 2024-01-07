@@ -552,3 +552,19 @@ int main(void){
     return(0);
 }
 */
+
+int main(void){
+    const char *a = ":::///mmmokmec///:::";
+    const char *b = "   a     bcde     ef   ";
+    const char *c = "        \n-_.okmec.....  :::://";
+    const char *test1 = ":/";
+    const char *test2 = " :/";
+    const char *test3  = " \n-_.";
+    printf("a before ---> %s \n", a);
+    printf("a after ---> %s\n", ft_strtrimchr_multi(a, test1));
+    printf("b before ---> %s \n", b);
+    printf("b after ---> %s\n", ft_strtrimchr_multi(b, test2));
+    printf("c before ---> %s \n", c);
+    printf("c after ---> %s\n", ft_strtrimchr_multi(c, test3));
+    return(0);
+}
