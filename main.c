@@ -531,4 +531,24 @@ int main(void){
 }
 */
 
-
+//////////////////////////////ft_strtrimchr
+/*
+int main(void){
+    const char *a = "ccccccccccbonjourcccccccccc";
+    const char *b = "abccccccccbonjourcccccccccc";
+    const char *c = "          bonjour     ok   ";
+    const char *d = "";
+    printf("a sans trim--> %s\n", a);
+    printf("a avec trim--> %s\n", ft_strtrimchr(a, 'c'));
+    printf("\n");
+    printf("b avant trim --> %s\n", b);
+    printf("b apres trim --> %s\n", ft_strtrimchr(b, 'c'));
+    printf("\n");
+    printf("c avant trim --> %s\n", c);
+    printf("b apres trim --> %s\n", ft_strtrimchr(c, ' '));
+    printf("\n");
+    printf("b avant trim --> %s\n", d);
+    printf("b apres trim --> %s\n", ft_strtrimchr(d, 'c'));
+    return(0);
+}
+*/
