@@ -1,5 +1,6 @@
 #include "stddef.h"
 #include "stdlib.h"
+#include "stdio.h"
 
 static size_t ft_strlen_const(const char   *str){
 	size_t i;
@@ -11,6 +12,21 @@ static size_t ft_strlen_const(const char   *str){
 	return(i);
 }
 
+
+//function qui boucle sur une chaine de char.
+//le but est de comparer chaque caractere de str à chaque caracetere de set.
+//donc on a une boucle sur tout les char de set
+//	ensuite on a une boucle sur tout les char de set pour chaque char de str.
+//		On a une variable tmp qui = 0;
+//		donc si dans le tour de boucle de set, si str[x] == set, le tmp == 1, ca veut dire que le cha se trouve dans la list de set
+//		Donc on ne doit pas continuer la boucle, on peut direct sortir de celle la et incrémenter la boucle mère.
+//	On remets le compteur de la boucle enfant à 0
+//	On relance la boucle mere à la valeur suivante
+//	On boucle la valeu suivant dans la boucle enfant.
+//	Si jamais str[x] est != de toute les valeurs de set, ca veut dire que str[x] ne se trouve pas dans set et donc on doit arreter le trim a cette place.
+//	Donc tmp vaudra 1 et on peut quitter les deux boucle,
+//	tmp doit être des conditions pour les deux boucles.
+// Dans tout les cas, on doit retourner le nb de boucles mere pour savoir ou commence ou non, le trim.
 
 
 
@@ -36,7 +52,10 @@ size_t	startStr(const char *s1, const char *set){
 			//si s1[i] est bien dans la char* set, on donne la valeur 1 à tmp
 			if(s1[i] == set[j]){
 				tmp = 1;
+			}else if(s1[i] != set[j]){
+				tmp = 0;
 			}
+			
 			//on continue la boucle
 			j++;
 		}
@@ -46,6 +65,7 @@ size_t	startStr(const char *s1, const char *set){
 		if(tmp == 0){
 			return(i);
 		}
+		j = 0;
 		i++;
 	}
 	return(i);
@@ -61,12 +81,15 @@ size_t	endStr(const char *s1, const char *set, size_t start){
 	int tmp;
 
 	end = ft_strlen_const(s1) - 1;
-	i = 0;
 	tmp = 0;
 	while(end > start){
+		i = 0;
 		while(set[i] != '\0'){
+			//on peut directement donner 1 cmme valeur à tmp et si jamais s1[end] != de set
 			if(s1[end] == set[i]){
 				tmp = 1;
+			}else if(s1[end] != set[i]){
+				tmp = 0;
 			}
 			i++;
 		}
@@ -94,8 +117,9 @@ char    *ft_strtrimchr_multi(const char *s1, const char    *set){
 	char	*str;
 
 	start = startStr(s1, set);
-	printf("start --> %d")
+	printf("start --> %zu\n",start);
 	end = endStr(s1, set, start);
+	printf("end --> %zu\n",end);
 	i = 0;
 	str = (char *)malloc((end - start + 2) * sizeof(char));
 	if(str == NULL){
