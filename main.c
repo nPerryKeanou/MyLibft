@@ -21,6 +21,16 @@ void    ft_putstr(char *str){
     }
 }
 
+static size_t ft_strlen_const(const char   *str){
+	size_t i;
+
+	i = 0;
+	while(str[i] != '\0'){
+		i++;
+	}
+	return(i);
+}
+
 /////////////////////////////////////////////////// isalpha, islower, isupper
 /*
 int main(void){
@@ -552,19 +562,24 @@ int main(void){
     return(0);
 }
 */
-
+////////////////////////////ft_strtrimchr_multi
+/*
 int main(void){
     const char *a = ":::///mmmokmec///:::";
     const char *b = "   a     bcde     ef   ";
-    const char *c = "        \n-_.okmec.....  :::://";
+    const char *c = "        \\n-_.okmec.....  -__--:::://";
     const char *test1 = ":/";
     const char *test2 = " :/";
-    const char *test3  = " \n-_.";
-    printf("a before ---> %s \n", a);
+    const char *test3  = " /\\n-_.:";
+    printf("a before ---> %s && len --> %zu\n", a, ft_strlen_const(a));
     printf("a after ---> %s\n", ft_strtrimchr_multi(a, test1));
-    printf("b before ---> %s \n", b);
+    printf("\n");
+    printf("b before ---> %s && len --> %zu\n", b, ft_strlen_const(b));
     printf("b after ---> %s\n", ft_strtrimchr_multi(b, test2));
-    printf("c before ---> %s \n", c);
+    printf("\n");
+    printf("c before ---> %s && len --> %zu\n", c, ft_strlen_const(c));
     printf("c after ---> %s\n", ft_strtrimchr_multi(c, test3));
     return(0);
 }
+*/
+

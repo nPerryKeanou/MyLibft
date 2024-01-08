@@ -39,33 +39,23 @@ static size_t ft_strlen_const(const char   *str){
 size_t	startStr(const char *s1, const char *set){
 	size_t i;
 	size_t j;
-	int tmp;
+	int isPresent;
+
 
 	i = 0;
-	j = 0;
-	tmp = 0;
-	//parcourir le s1
 	while(s1[i] != '\0'){
-		//parcourir set
+		j = 0;
+		isPresent = 0;
 		while(set[j] != '\0'){
-			//comparer s1[i] à tout les set[j]
-			//si s1[i] est bien dans la char* set, on donne la valeur 1 à tmp
 			if(s1[i] == set[j]){
-				tmp = 1;
-			}else if(s1[i] != set[j]){
-				tmp = 0;
+				isPresent = 1;//ca veut dire qu'il y a au minumum, une valeur qui peut etre trim.
+				break;
 			}
-			
-			//on continue la boucle
 			j++;
 		}
-		//si s1[i] n'est pas dans char* set, tmp n'a pas recu la valeur de 1 et vaudra tjrs 0.
-		//donc ca veux dire que le trim va s'arreter ici et on va retourner le nb de boucle que l'on a fait.
-		//le nb de boucles nous indiques l'index de s1[], donc de l'endroit ou va s'arreter le trim.
-		if(tmp == 0){
+		if(isPresent == 0){//ca veut dire qu'il s1[i] n'egale aucu set[j], donc que le trim doit s'arreter
 			return(i);
 		}
-		j = 0;
 		i++;
 	}
 	return(i);
@@ -74,26 +64,24 @@ size_t	startStr(const char *s1, const char *set){
 //endStr va parcourir s1 en comparer s1[lens1] -- à chaque set[], jusqu'au moment ou un s1[x] ne sera pas dans *set
 //c'est a cette valeur, que l'on devra arreter le trim. Donc start prendre le nb de boucle que l'on a jusque la.
 //on va parcourir jusqu'a start
-size_t	endStr(const char *s1, const char *set, size_t start){
-	//ici on commence de la fin, donc on donne a end, la taille de s1 - 1 (car on n'oublie pas que l'on commence à 0)
+size_t	endStr(const char *s1, const char *set){
 	size_t end;
 	size_t i;
-	int tmp;
+	int isPresent;
 
-	end = ft_strlen_const(s1) - 1;
-	tmp = 0;
-	while(end > start){
+	end = ft_strlen_const(s1);
+	printf("end --> len --> %zu\n", end);
+	while(end > 0){
+		isPresent = 0;
 		i = 0;
 		while(set[i] != '\0'){
-			//on peut directement donner 1 cmme valeur à tmp et si jamais s1[end] != de set
-			if(s1[end] == set[i]){
-				tmp = 1;
-			}else if(s1[end] != set[i]){
-				tmp = 0;
+			if(s1[end - 1] == set[i]){
+				isPresent = 1;
+				break;
 			}
 			i++;
 		}
-		if(tmp == 0){
+		if(isPresent == 0){
 			return(end);
 		}
 		end--;
@@ -117,10 +105,16 @@ char    *ft_strtrimchr_multi(const char *s1, const char    *set){
 	char	*str;
 
 	start = startStr(s1, set);
-	printf("start --> %zu\n",start);
-	end = endStr(s1, set, start);
-	printf("end --> %zu\n",end);
+	end = endStr(s1, set);
 	i = 0;
+	if (start == end) {
+        char *emptyStr = (char *)malloc(1);
+        if (emptyStr == NULL) {
+            return NULL;
+        }
+        emptyStr[0] = '\0';
+        return emptyStr;
+    }
 	str = (char *)malloc((end - start + 2) * sizeof(char));
 	if(str == NULL){
 		return(NULL);
