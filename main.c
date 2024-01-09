@@ -582,4 +582,37 @@ int main(void){
     return(0);
 }
 */
+//////////////////////////////////////ft_strtrimstr.c
+int main(void){
+    const char    *a = "abcdef abcdef abcdef azzzz";
+    const char    *a_set = "abcdef";
+
+    const char *b = "abcdef bbbbbb abcdef";
+    const char *c = "ccccccccc";
+    const char *d = "ccccccccccc abcdef";
+    const char *e = "abcdefabcdefabcdef azzzz";
+
+    printf("a       --> %s\n",a);
+    printf("a_set   --> %s\n", a_set);
+    printf("ft_strtrimstr(a, a_st) --> %s\n", ft_strtrimstr(a, a_set));
+    printf("\n");
+    printf("b       --> %s\n",b);
+    printf("_set   --> %s\n", a_set);
+    printf("ft_strtrimstr(b, a_st) --> %s\n", ft_strtrimstr(b, a_set));
+    printf("\n");
+    printf("c       --> %s\n",c);
+    printf("a_set   --> %s\n", a_set);
+    printf("ft_strtrimstr(c, a_st) --> %s\n", ft_strtrimstr(c, a_set));
+    printf("\n");
+    printf("d       --> %s\n",d);
+    printf("a_set   --> %s\n", a_set);
+    printf("ft_strtrimstr(d, a_st) --> %s\n", ft_strtrimstr(d, a_set));
+    printf("\n");
+    printf("e      --> %s\n",e);
+    printf("a_set   --> %s\n", a_set);
+    printf("ft_strtrimstr(e, a_st) --> %s\n", ft_strtrimstr(e, a_set));
+    printf("\n");
+    
+
+}
 

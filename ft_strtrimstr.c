@@ -1,5 +1,6 @@
 #include "stddef.h"
 #include "stdlib.h"
+#include "stdio.h"
 
 static size_t ft_strlen_const(const char   *str){
 	size_t i;
@@ -16,54 +17,70 @@ static size_t ft_strlen_const(const char   *str){
 //si il y a une différence avant la fin de la boucle de set, on retourn 0.
 //si tout est ok, on répète la boucle au cas ou il y aurait plusieurs set d'affilé dans s1. 
 size_t ft_startingtrim(const char *paramS1,  const char *paramSet){
+	size_t rslt;//cette variable va renvoyer le nb de fois où l'on trouve set OU le nb de chars  à trim (qui se le nombre de boucle de while * set)
 	size_t i;
-	//int boole; //boole va être le boolean qui va relancer ou non la boucle si on retrouve un set dans s1(il faudrait peut être le faire en recursive.)
-	
+	size_t j;
+
+	rslt = 0;
 	i = 0;
-	//boole = 1;
-	while(i > ft_strlen_const(paramSet)){
-		if(paramS1[i] != paramSet[i]){
-			//ca vaut dire que le début de s1 est différent de set.
-			//cela retourne un 0 et start vaudra 0
-			return(0);
+	j = 0;
+	while(paramS1[i] != '\0' && paramS1[i] == paramSet[j]){
+		//si j egale la lonueur de set - 1 car on commence j à zero.
+		if(paramS1[i] == paramSet[j] && j == ft_strlen_const(paramSet - 1)){
+			printf("ft_strlen_const(paramSet - 1) --> %zu\n", ft_strlen_const(paramSet - 1));
+			printf("paramS1[i] --> %c && paramSet[j] --> %c && j --> %zu\n", paramS1[i], paramSet[j], j);
+			rslt += 1;
+			j = 0;
+		}else if(paramS1[i] == paramSet[j] && j < ft_strlen_const(paramSet - 1)){
+			j++;
+		}
+		else{
+			return(rslt);
 		}
 		i++;
 	}
-	return(ft_strlen_const(paramSet));
+	return(rslt);
 }
 
 
-//il faut une fonction qui boucle ft_startingtrim.
-size_t	calculStart(const char *paramS1,  const char *paramSet, size_t starts){
-	size_t rslt;
-
-	rslt = 0;
-	//ici l'appel de la fonction va faire qu'elle sera deja lance une premiere fois.
-	//attention
-	//ft_startingtrim return juste 0 ou la longueur de set. Il ne change pas le char, donc il va toujours retourner les mêmes réponses.
-	//Il faut donc tout faire dans ft_startingtrim, il faut parcouris tant que set est présent, recommencer s'il y a toujours un set et incréenter la réponses. 
-	while(ft_startingtrim(paramS1, paramSet) == ft_strlen_const(paramSet)){
-		rslt += ft_startingtrim(paramS1, paramSet);
-	}
-}
 
 /**
  * function qui va vérifier si set ce trouve bien en fin de chaine.
  * Si il y a un char different, on retourne 0 et end vaudra donc 0. 
 */
 size_t ft_endingtrim(const char *paramS1, const char *paramSet){
+	size_t rslt;
 	size_t i;
+	size_t j;
 	size_t end;
+	size_t len_set;
 
+	rslt = 0;
 	i = 0;
-	end = ft_strlen_const(paramS1) - ft_strlen_const(paramSet);
-	while(i < ft_strlen_const(paramSet)){
-		if(paramS1[end - 1] != paramSet[i]){
-			return(0);
+	j = 0;
+	end = ft_strlen_const(paramS1);//longueur total de la chaine, donc ex : 10 char.
+	len_set = ft_strlen_const(paramSet);
+	//end = ft_strlen_const(paramS1 - 1);Ceci est la longueur - 1 donc pour préciser que l'on commence un index à 0.
+	//on doit boucler sur tout les chars de s1 en partant de la fin.
+	//On ne démarre pas exactement de la fin mais de la longueu de s1 - la longuer de set. Et comme on va utiliser des index, on va retirer 1.
+	//On boucle tant que s1[len_total - len_set - 1] == set[i]
+	//	si s1[len_total - len_set - 1] == set[i] && i == len_set, on incrémente rslt et on décrémente end - len_set
+
+	while(paramS1[end - len_set - 1] == paramSet[i]){
+		//len_set - 1 car on commence i à 0
+		if(paramS1[end - len_set - 1] == paramSet[i] && i == len_set - 1){
+			rslt += 1;
+			i = 0;//ici je remets la set à l'index 0 
+			//je dois aussi décrémenter de len set la chaine s1 pour relancer la boucle
+			end -= len_set;
+		}else if(paramS1[end - len_set - 1] == paramSet[i] && i < len_set){
+			end++;
+		}else{
+			return(rslt);
 		}
 		i++;
 	}
-	return(ft_strlen_const(paramSet));
+	return(rslt);
 }
 /*
 Cette fonction va supprimer le debut et fin de chaine de s1 si on retouve exactement set en debut et fin.

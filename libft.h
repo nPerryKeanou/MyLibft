@@ -9,6 +9,7 @@ char    *ft_substr(const char *s, unsigned int start, size_t len);
 char    *ft_strjoin(const char *s1, const char *s2);
 char    *ft_strtrimchr(const char *s1, int c);
 char    *ft_strtrimchr_multi(const char *s1, const char    *set);
+char    *ft_strtrimstr(const char *s1, const char    *set);
 
 
 int ft_isalpha(int c);
