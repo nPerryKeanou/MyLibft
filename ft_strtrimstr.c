@@ -24,14 +24,14 @@ size_t ft_startingtrim(const char *paramS1,  const char *paramSet){
 	rslt = 0;
 	i = 0;
 	j = 0;
+	printf("start ------- paramS1[i] = %c  == paramSet[j] = %c\n", paramS1[i], paramSet[j]);
 	while(paramS1[i] != '\0' && paramS1[i] == paramSet[j]){
 		//si j egale la lonueur de set - 1 car on commence j à zero.
-		if(paramS1[i] == paramSet[j] && j == ft_strlen_const(paramSet - 1)){
-			printf("ft_strlen_const(paramSet - 1) --> %zu\n", ft_strlen_const(paramSet - 1));
-			printf("paramS1[i] --> %c && paramSet[j] --> %c && j --> %zu\n", paramS1[i], paramSet[j], j);
+		printf(" - - - - - i = %zu && rslt = %zu\n",i,rslt);
+		if(paramS1[i] == paramSet[j] && j == ft_strlen_const(paramSet) - 1){
 			rslt += 1;
 			j = 0;
-		}else if(paramS1[i] == paramSet[j] && j < ft_strlen_const(paramSet - 1)){
+		}else if(paramS1[i] == paramSet[j] && j < ft_strlen_const(paramSet) - 1){
 			j++;
 		}
 		else{
@@ -39,6 +39,12 @@ size_t ft_startingtrim(const char *paramS1,  const char *paramSet){
 		}
 		i++;
 	}
+	printf(" - - - - - i = %zu && rslt = %zu\n",i,rslt);
+	printf("start ------- paramS1[i] = %c  == paramSet[j] = %c\n", paramS1[i], paramSet[j]);// pourquoi paramS1[i] n'affiche rien ?
+	//printf("paramS1 --> %s\n", paramS1);
+	//printf("i --> %zu\n", i);
+	//printf("paramS1[i] --> %c\n", paramS1[i]);
+	//paramS1[i] == ' ';
 	return(rslt);
 }
 
@@ -50,14 +56,14 @@ size_t ft_startingtrim(const char *paramS1,  const char *paramSet){
 */
 size_t ft_endingtrim(const char *paramS1, const char *paramSet){
 	size_t rslt;
-	size_t i;
-	size_t j;
+	size_t i;;
 	size_t end;
 	size_t len_set;
+	int booleTrue;
 
 	rslt = 0;
 	i = 0;
-	j = 0;
+	booleTrue = 1;
 	end = ft_strlen_const(paramS1);//longueur total de la chaine, donc ex : 10 char.
 	len_set = ft_strlen_const(paramSet);
 	//end = ft_strlen_const(paramS1 - 1);Ceci est la longueur - 1 donc pour préciser que l'on commence un index à 0.
@@ -66,20 +72,29 @@ size_t ft_endingtrim(const char *paramS1, const char *paramSet){
 	//On boucle tant que s1[len_total - len_set - 1] == set[i]
 	//	si s1[len_total - len_set - 1] == set[i] && i == len_set, on incrémente rslt et on décrémente end - len_set
 
-	while(paramS1[end - len_set - 1] == paramSet[i]){
+	printf("---------------------- 1 --------------------\n");
+//	while(paramS1[end - len_set - 1] == paramSet[i]){
+	while(booleTrue == 1){
+		printf("---------------------- 2 --------------------\n");
 		//len_set - 1 car on commence i à 0
 		if(paramS1[end - len_set - 1] == paramSet[i] && i == len_set - 1){
+			printf("----------------------3 --------------------\n");
 			rslt += 1;
 			i = 0;//ici je remets la set à l'index 0 
 			//je dois aussi décrémenter de len set la chaine s1 pour relancer la boucle
 			end -= len_set;
 		}else if(paramS1[end - len_set - 1] == paramSet[i] && i < len_set){
-			end++;
+			printf("---------------------- 4 --------------------\n");
+			end--;
 		}else{
+			printf("---------------------- 5 --------------------\n");
+			booleTrue = 0;
 			return(rslt);
 		}
 		i++;
+		printf("---------------------- 6 --------------------\n");
 	}
+	printf("---------------------- 7 --------------------\n");
 	return(rslt);
 }
 /*
@@ -102,10 +117,13 @@ char    *ft_strtrimstr(const char *s1, const char    *set){
 
 	i = 0;
 	lens1 = ft_strlen_const(s1);
+	printf("---- 1 -----\n");
 	if(s1[i] != set[i])
 	{
+		printf("---- 2 -----\n");
 		start = 0;
 	}else{
+		printf("---- 3 -----\n");
 		//cette fonction va retourner un size_t, qui selon la fn peut etre un de la taille de set ou de x * set 
 		//
 		//ici, il faudrait avoir un fn qui incrémente start tant qu'il retourne "true"
@@ -113,23 +131,32 @@ char    *ft_strtrimstr(const char *s1, const char    *set){
 		start = ft_startingtrim(s1,  set);
 		
 	}
-	if(s1[(lens1 - 1) - ft_strlen_const(set)] != set[i]){
+	printf("---- 4 -----\n");
+	if(s1[lens1 - ft_strlen_const(set) - 1] != set[i]){
+		printf("---- 5 -----\n");
+		printf("s1[lens1 - ft_strlen_const(set) - 1] --> %c\n",s1[lens1 - ft_strlen_const(set) - 1]);
 		end = 0;
 	}else{
 		//cette fonction va retourner un size_t, qui selon la fn peut etre un de la taille de set ou de x * set 
 		//
 		//ici, il faudrait avoir un fn qui incrémente end tant qu'il retourne "true"
+		printf("---- 6 -----\n");
 		end = ft_endingtrim(s1, set);
 	}
+	printf("---- 7-----\n");
 	str = (char *)malloc(lens1 - start - end + 2 * sizeof(char));
 	if(str == NULL){
 		return(NULL);
 	}
+	printf("---- 8 -----\n");
 	while(s1[i] != '\0' && i < lens1 - start - end){
+		printf("---- 9 -----\n");
 		str[i] = s1[start];
 		i++;
 		start++; 
 	}
+	printf("---- 10 -----\n");
 	str[i] = '\0';
+	printf("---- 11 -----\n");
 	return(str);
 }   
