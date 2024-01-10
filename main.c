@@ -583,6 +583,7 @@ int main(void){
 }
 */
 //////////////////////////////////////ft_strtrimstr.c
+/*
 int main(void){
     const char    *a = "abcdef abcdef abcdef azzzz";
     const char    *a_set = "abcdef";
@@ -592,27 +593,104 @@ int main(void){
     const char *d = "ccccccccccc abcdef";
     const char *e = "abcdefabcdefabcdef azzzz";
 
+    char *rslt1 = ft_strtrimstr(a, a_set);
+    char *rslt2 = ft_strtrimstr(b, a_set);
+    char *rslt3 = ft_strtrimstr(c, a_set);
+    char *rslt4 = ft_strtrimstr(d, a_set);
+    char *rslt5 = ft_strtrimstr(e, a_set);
     printf("a       --> %s\n",a);
     printf("a_set   --> %s\n", a_set);
-    printf("ft_strtrimstr(a, a_st) --> %s\n", ft_strtrimstr(a, a_set));
+    printf("ft_strtrimstr(a, a_st) --> %s\n", rslt1);
+    printf("\n");
     printf("\n");
     printf("b       --> %s\n",b);
     printf("_set   --> %s\n", a_set);
-    printf("ft_strtrimstr(b, a_st) --> %s\n", ft_strtrimstr(b, a_set));
+    printf("ft_strtrimstr(b, a_st) --> %s\n", rslt2);
     printf("\n");
-    // printf("c       --> %s\n",c);
-    // printf("a_set   --> %s\n", a_set);
-    // printf("ft_strtrimstr(c, a_st) --> %s\n", ft_strtrimstr(c, a_set));
-    // printf("\n");
-    // printf("d       --> %s\n",d);
-    // printf("a_set   --> %s\n", a_set);
-    // printf("ft_strtrimstr(d, a_st) --> %s\n", ft_strtrimstr(d, a_set));
-    // printf("\n");
-    // printf("e      --> %s\n",e);
-    // printf("a_set   --> %s\n", a_set);
-    // printf("ft_strtrimstr(e, a_st) --> %s\n", ft_strtrimstr(e, a_set));
-    // printf("\n");
-    
+    printf("\n");
+    printf("c       --> %s\n",c);
+    printf("a_set   --> %s\n", a_set);
+    printf("ft_strtrimstr(c, a_st) --> %s\n", rslt3);
+    printf("\n");
+    printf("\n");
+    printf("d       --> %s\n",d);
+    printf("a_set   --> %s\n", a_set);
+    printf("ft_strtrimstr(d, a_st) --> %s\n", rslt4);
+    printf("\n");
+    printf("e      --> %s\n",e);
+    printf("a_set   --> %s\n", a_set);
+    printf("ft_strtrimstr(e, a_st) --> %s\n", rslt5);
+    printf("\n");
 
+    free(rslt1);
+    free(rslt2);
+    free(rslt3);
+    free(rslt4);
+    free(rslt5);
+
+    return(0);
 }
+*/
+/*
+int main() {
+    // Test 1: Chaîne vide, pas de trimming
+    const char *test1 = "";
+    const char *set1 = "";
+    char *result1 = ft_strtrimstr(test1, set1);
+    printf("Test 1: '%s'\n", result1);  // Devrait afficher une chaîne vide
 
+    // Test 2: Chaîne vide, trimming avec un ensemble non vide
+    const char *test2 = "";
+    const char *set2 = "abc";
+    char *result2 = ft_strtrimstr(test2, set2);
+    printf("Test 2: '%s'\n", result2);  // Devrait afficher une chaîne vide
+
+    // Test 3: Chaîne non vide, pas de trimming
+    const char *test3 = "Hello, World!";
+    const char *set3 = "";
+    char *result3 = ft_strtrimstr(test3, set3);
+    printf("Test 3: '%s'\n", result3);  // Devrait afficher la chaîne originale
+
+    // Test 4: Chaîne non vide, trimming au début et à la fin
+    const char *test4 = "   \t  Trim me!  \t  ";
+    const char *set4 = " \t";
+    char *result4 = ft_strtrimstr(test4, set4);
+    printf("Test 4: '%s'\n", result4);  // Devrait afficher "Trim me!"
+
+    // Test 5: Chaîne non vide, trimming au début seulement
+    const char *test5 = "   \t  Trim me!";
+    const char *set5 = " \t";
+    char *result5 = ft_strtrimstr(test5, set5);
+    printf("Test 5: '%s'\n", result5);  // Devrait afficher "Trim me!"
+
+    // Test 6: Chaîne non vide, trimming à la fin seulement
+    const char *test6 = "Trim me!  \t  ";
+    const char *set6 = " \t";
+    char *result6 = ft_strtrimstr(test6, set6);
+    printf("Test 6: '%s'\n", result6);  // Devrait afficher "Trim me!"
+
+    // Test 7: Chaîne non vide, pas de trimming (ensemble non présent)
+    const char *test7 = "Hello, World!";
+    const char *set7 = "abc";
+    char *result7 = ft_strtrimstr(test7, set7);
+    printf("Test 7: '%s'\n", result7);  // Devrait afficher la chaîne originale
+
+    // Test 8: Chaîne non vide, pas de trimming (ensemble présent au milieu)
+    const char *test8 = "Hello, World!";
+    const char *set8 = "abc";
+    char *result8 = ft_strtrimstr(test8, set8);
+    printf("Test 8: '%s'\n", result8);  // Devrait afficher la chaîne originale
+
+    // Libération de la mémoire
+    free(result1);
+    free(result2);
+    free(result3);
+    free(result4);
+    free(result5);
+    free(result6);
+    free(result7);
+    free(result8);
+
+    return 0;
+}
+*/
