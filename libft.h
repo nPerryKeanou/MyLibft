@@ -11,6 +11,8 @@ char    *ft_strtrimchr(const char *s1, int c);
 char    *ft_strtrimchr_multi(const char *s1, const char    *set);
 char    *ft_strtrimstr(const char *s1, const char    *set);
 
+char **ft_split(const char *s, int c);
+
 
 int ft_isalpha(int c);
 int ft_islower(int c);

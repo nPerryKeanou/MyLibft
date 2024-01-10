@@ -694,3 +694,23 @@ int main() {
     return 0;
 }
 */
+
+//////////////////////////////////////ft_split
+int main() {
+    const char *s = " ,       Bonjour,monde,C,est,genial, , ,";
+    char **tab = ft_split(s, ',');
+    
+    if (tab != NULL) {
+        for (size_t i = 0; tab[i] != NULL; i++) {
+            printf("Mot %zu : %s\n", i + 1, tab[i]);
+        }
+
+        // Free memory
+        for (size_t i = 0; tab[i] != NULL; i++) {
+            free(tab[i]);
+        }
+        free(tab);
+    }
+
+    return 0;
+}
