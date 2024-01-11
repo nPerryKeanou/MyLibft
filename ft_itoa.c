@@ -15,43 +15,48 @@ argument. Les nombres négatifs doivent être gérés.
 // valeur int max: 2147483647  && min : -2147483648
 
 long long ft_len_nb(int nb){
-    long long i;
-    long long rslt;
-
-    i = 0;
-    while(nb > 0){
+        long long i = 0;
+    // Gérer le cas où nb est égal à zéro
+    if (nb == 0) {
+        return 1;
+    }
+    while (nb != 0) {
         nb = nb / 10;
         i++;
     }
-    //i sera le nb de boucle fait pour que nb / 10 soit == ou < que 0
-    return(i);
+    return i;
 }
 
 char    *ft_itoa(int nb){
-    int rslt_div;
-    int rslt_mod;
-    int len_malloc;
-    int i;
-    char *rslt_str;
+    long long n = ft_len_nb((long long)nb);
+    int len_str = 0;
+    char *str;
+    int boole;
 
-    rslt_div = 0;
-    rslt_mod = 0;
-    len_malloc = ft_len_nb(nb);
-    i = ft_len_nb(nb) - 1;
-    if(nb < 0){
-        len_malloc += 1;
+    n = (nb == 0) ? 1 : n; // Gérer le cas où nb est égal à zéro
+    len_str = 0;
+    boole = 1;
+    if (nb < 0) {
+        len_str += 1;
+        nb = -nb;
+        boole = 0;
     }
-    rslt_str = (char*)malloc(len_malloc +  1 * sizeof(char));
-    if(rslt_str == NULL){
-        return(0);
+    str = (char *)malloc((len_str + n + 1) * sizeof(char)); // Correction pour la taille de la chaîne
+    if (str == NULL) {
+        return NULL;
     }
-    rslt_str[i] = '\0';
-    i--;
-    while(nb > 0){
-        rslt_mod = nb % 10;
-        //il faut mettre rslt_mod dans la derniere place de rslt_str et puis décrémenter pour arriver à l'index 0
-        rslt_str[i] = rslt_mod;
-        rslt_div / 10;
+    str[n--] = '\0';
+    // Gérer le cas où nb est égal à zéro
+    if (nb == 0) {
+        str[0] = '0';
+        return str;
     }
-    return(rslt_str);
+    while (nb > 0) {
+        str[n--] = '0' + nb % 10;
+        nb = nb / 10;
+    }
+    if (boole == 0) {
+        str[0] = '-';
+    }
+    return str;
 }

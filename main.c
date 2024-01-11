@@ -696,6 +696,7 @@ int main() {
 */
 
 //////////////////////////////////////ft_split
+/*
 int main() {
     const char *s = " ,       Bonjour,monde,C,est,genial, , ,";
     char **tab = ft_split(s, ',');
@@ -713,4 +714,35 @@ int main() {
     }
 
     return 0;
+}
+*/
+
+///////////////////////////////////////ft_itoa
+int main(void){
+    char *rslt = ft_itoa(1234);
+    char *rslt2 = ft_itoa(-1234);
+    char *rslt3 = ft_itoa(0);
+    char *rslt4 = ft_itoa(-0);
+    char *rslt5 = ft_itoa(2147483647);
+    char *rslt6 = ft_itoa(-2147483647);
+    char *rslt7 = ft_itoa(-2147483648);
+    char *rslt8 = ft_itoa(2147483648);
+    printf("rslt --> %s\n", rslt);
+    printf("rslt2 --> %s\n", rslt2);
+    printf("rsl3t --> %s\n", rslt3);
+    printf("rslt4 --> %s\n", rslt4);
+    printf("rslt5 --> %s\n", rslt5);
+    printf("rslt6 --> %s\n", rslt6);
+    printf("rslt7 --> %s\n", rslt7);
+    printf("rslt8 --> %s\n", rslt8);
+    free(rslt);
+    free(rslt2);
+    free(rslt3);
+    free(rslt4);
+    free(rslt5);
+    free(rslt6);
+    free(rslt7);
+    free(rslt8);
+
+    return(0);
 }
