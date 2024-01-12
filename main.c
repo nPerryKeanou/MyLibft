@@ -718,6 +718,7 @@ int main() {
 */
 
 ///////////////////////////////////////ft_itoa
+/*
 int main(void){
     char *rslt = ft_itoa(1234);
     char *rslt2 = ft_itoa(-1234);
@@ -745,4 +746,61 @@ int main(void){
     free(rslt8);
 
     return(0);
+}
+*/
+
+/////////////////////////////////////ft_strmapi
+// Fonction de test à appliquer à chaque caractère
+/*
+char test_function(unsigned int index, char c) {
+    // Cette fonction transforme chaque caractère en son code ASCII + l'index
+    return c + index;
+}
+
+int main(void) {
+    // Chaîne de caractères de test
+    const char *input_str = "Hello, World!";
+
+    // Appel de ft_strmapi avec la fonction de test
+    char *result_str = ft_strmapi(input_str, &test_function);
+
+    if (result_str != NULL) {
+        // Affichage de la chaîne résultante
+        printf("Input: %s\n", input_str);
+        printf("Result: %s\n", result_str);
+
+        // Libération de la mémoire allouée
+        free(result_str);
+    } else {
+        printf("Allocation mémoire échouée.\n");
+    }
+
+    return 0;
+}
+*/
+
+//////////////////////////////////ft_striteri
+// Exemple de fonction à passer en argument (imprime chaque caractère avec son indice)
+/*
+void print_char_with_index(unsigned int index, char *c) {
+    printf("Character at index %u: %c\n", index, *c);
+}
+
+int main(void) {
+    char test_string[] = "Hello, World!";
+    
+    // Appliquer la fonction print_char_with_index à chaque caractère de la chaîne
+    ft_striteri(test_string, &print_char_with_index);
+
+    return 0;
+}
+*/
+///////////////////////////////////////ft_putchar_fd
+int main() {
+    char character = 'A';
+
+    // Appel de la fonction ft_putchar_fd avec le descripteur 1 (correspondant à la sortie standard)
+    ft_putchar_fd(character, 1);
+
+    return 0;
 }
