@@ -1,5 +1,4 @@
-#include "stddef.h"
-#include "stdlib.h"
+#include "libft.h"
 
 static size_t ft_strlen_const(const char   *str){
 	size_t i;

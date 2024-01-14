@@ -1,3 +1,6 @@
+#include "libft.h"
+
+
 //  La fonction isdigit() en langage C teste la présence d'un caractère décimal.
 //  Indépendamment de la localisation, cela inclut uniquement les caractères suivants :
 //  0'' 1'' 2'' 3'' 4'' 5'' 6'' 7'' 8'' 9''``

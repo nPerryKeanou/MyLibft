@@ -1,3 +1,5 @@
+#include "libft.h"
+
 // * La fonction strchr recherche la derniére occurrence du caractère spécifié c dans la chaîne de caractères pointée par s. 
 //c'est la même chose que strchr mais, on décrémente à partir de la fin de la chaine.
 

@@ -1,5 +1,4 @@
-#include "stddef.h"
-
+#include "libft.h"
 
 /*
 Cette fonction copie jusqu'à dstsize - 1 caractères depuis la chaîne source src vers la destination dst.

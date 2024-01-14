@@ -1,4 +1,5 @@
-//#include "stddef.h"
+#include "libft.h"
+
 /**
  * 
  * LORSQUE L'ON TRAVAILLE AVEC DES POINTEURS EN LANGAGE C, IL EST IMPORTANT DE COMPRENDRE QU'UN POINTEUR EST SIMPLEMENT UN VARIABLE
@@ -40,7 +41,7 @@ cela n'aura pas d'impact sur dst à l'extérieur de la fonction.
 void    *ft_memmove(void *dst, const void *src, size_t len){
     size_t i;
     unsigned char   *ptr_dst;
-    unsigned char   *ptr_src;
+    const unsigned char   *ptr_src;
 
     i = 0;
     ptr_dst = dst;//ptr_dst copie l'adresse de dst, donc on peut travailler sur une copie de dst sans toucher à celui ci. 

@@ -1,4 +1,5 @@
-#include "stddef.h"
+#include "libft.h"
+
 /*
 *
 La fonction strncmp compare les n premiers caractères des chaînes de caractères s1 et s2. 

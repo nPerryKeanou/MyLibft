@@ -1,6 +1,5 @@
-#include "stdlib.h"
-#include "stdio.h"
-#include "stddef.h"
+#include "libft.h"
+
 
 //ft_strmapi va lancer la fn pour chaque char dans un chaine de caractere.
 

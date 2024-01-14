@@ -1,4 +1,5 @@
-//#include "stddef.h"
+#include "libft.h"
+
 /*
 DESCRIPTION
 La fonction strlen() calcule la longueur de la chaîne de caractères s. 

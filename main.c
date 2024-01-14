@@ -795,12 +795,3 @@ int main(void) {
     return 0;
 }
 */
-///////////////////////////////////////ft_putchar_fd
-int main() {
-    char character = 'A';
-
-    // Appel de la fonction ft_putchar_fd avec le descripteur 1 (correspondant à la sortie standard)
-    ft_putchar_fd(character, 1);
-
-    return 0;
-}

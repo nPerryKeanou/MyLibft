@@ -1,4 +1,4 @@
-//#include "stddef.h"
+#include "libft.h"
 /**
  * strnstr :
 
@@ -21,7 +21,7 @@ static size_t ft_strlen_const(const char   *str){
 	return(i);
 }
 
-char    *strnstr(const char *haystack, const char *needle, size_t len){
+char    *ft_strnstr(const char *haystack, const char *needle, size_t len){
     size_t i;
     size_t tmp;
     size_t len_hays;

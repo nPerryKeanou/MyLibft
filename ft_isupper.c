@@ -1,3 +1,6 @@
+#include "libft.h"
+
+
 /*
     La fonction isupper() teste la présence de toute lettre majuscule. 
     La valeur de l'argument doit être représentable en tant qu'unsigned char ou avoir la valeur EOF.
