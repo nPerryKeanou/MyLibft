@@ -47,6 +47,8 @@ SRCS_BONUS = ft_lstnew.c\
 				ft_lstsize.c\
 				ft_lstlast.c\
 				ft_lstadd_back\
+				ft_lstdelone.c\
+				ft_lstclear.c\
 
 
 #Cette variable définit le compilateur à utiliser. Dans ce cas, c'est GCC.
