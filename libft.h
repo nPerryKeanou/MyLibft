@@ -10,6 +10,12 @@
 #include "fcntl.h"
 #include <sys/types.h>
 
+typedef struct s_list
+{
+    void    *content;
+    struct s_list *next;
+}               t_list;
+
 char    *ft_strchr(const    char    *s, int c);
 char    *ft_strrchr(const char *s, int c);
 char    *ft_strnstr(const char *haystack, const char *needle, size_t len);
@@ -42,6 +48,9 @@ size_t  ft_strlen(char *s);
 size_t ft_strlen_const(const char   *str);
 size_t  ft_strlcpy(char    *dst, const char   *src, size_t dstsize);
 size_t  ft_strlcat(char *dst, const char *src, size_t dstsize);
+
+t_list  *ft_lstnew(void *content);
+
 
 void    *ft_memset(void *b, int c, size_t len);
 void    *ft_memcpy(void *restrict dst, const void *restrict src, size_t n);

@@ -42,6 +42,9 @@ SRCS = ft_atoi.c\
 			ft_tolower.c\
 			ft_toupper.c
 
+SRCS_BONUS = ft_lstnew.c\
+
+
 #Cette variable définit le compilateur à utiliser. Dans ce cas, c'est GCC.
 CC = gcc
 
@@ -60,27 +63,36 @@ OBJS_DIR = objs/
 #et en ajoutant le chemin du répertoires d'objets à l'aide de '$(addpréfix $(OBJS_DIR), ...). Les fichiers objets sont 
 #les fichiers compilés correspondants aux fichiers sources.
 OBJS = $(addprefix $(OBJS_DIR), $(notdir $(SRCS:.c=.o)))
-
-
+	
+#Ces cibles sont marquées comme des cibles "PHONY", ce qui signifies qu'elles ne correspondent pas à des fichiers réels.
+#Cela permet d'éviter des problèmes si des fichiers ou des répertoires portent le même nom.
 .PHONY: all clean fclean re
 
+#LA règle par défaut. LA cible 'all' dépend de la cible "$(NAME), donc éxecuter 'make' construira la bibliothèque.
 all: $(NAME)
 
+#LA règle de compiltation des fichiers objets. Elle utilise le modéèle '%.O pour représenter tous les fichiers objets, et la dépendences
+#'libft.h' indique que si 'libft.h' est modifié, le fichiers objets doivent être reconstruit.
+#La cible utilise aussi '$(OBJS_DIR) pour s'assurer que le répertoire des objets existe.
 $(OBJS_DIR)%.o : %.c | $(OBJS_DIR) libft.h
 	@echo "Compiling: $<"
 	@$(CC) $(CFLAGS) -c $< -o $@ -I.
 
+#La règle pour créer le repertoire des objets s'il n'existe pas.
 $(OBJS_DIR):
 	@mkdir -p $(OBJS_DIR)
 
+#La règle pour créer la bibliothèque statique 'libft.a' en utilisant les fichiers objets.
 $(NAME): $(OBJS)
 	@ar rcs $@ $^
 	@echo "Libft Done !"
-
+#La règle pour supprimer les fichiers objets.
 clean:
 	@rm -rf $(OBJS_DIR)
 
+#La règle pour supprimer les fichiers objets et la bibliothèque statique.
 fclean: clean
 	@rm -f $(NAME)
 
+#La règle pour reconstruire la bibliothèque statique à partir de zéro.
 re: fclean all
