@@ -54,7 +54,7 @@ CFLAGS = -Wall -Wextra -Werror
 NAME = libft.a
 
 #Cette variable sera le répertoires où seront stockés les fichiers objets générés lors de la compiltions.
-OBJS_DIR = objs/`
+OBJS_DIR = objs/
 
 #Cette variable utilise '$(SCRS:c=.O)' pour générer la liste des fichiers objets en remplaçant l'extension '.C' par '.O'
 #et en ajoutant le chemin du répertoires d'objets à l'aide de '$(addpréfix $(OBJS_DIR), ...). Les fichiers objets sont 
