@@ -11,16 +11,6 @@ Sinon, un pointeur sur le premier caractère de la première occurrence de needl
  * 
 */
 
-static size_t ft_strlen_const(const char   *str){
-	size_t i;
-
-	i = 0;
-	while(str[i] != '\0'){
-		i++;
-	}
-	return(i);
-}
-
 char    *ft_strnstr(const char *haystack, const char *needle, size_t len){
     size_t i;
     size_t tmp;

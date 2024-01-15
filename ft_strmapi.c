@@ -4,15 +4,6 @@
 //ft_strmapi va lancer la fn pour chaque char dans un chaine de caractere.
 
 
-static size_t ft_strlen_const(char   *str){
-	size_t i;
-
-	i = 0;
-	while(str[i] != '\0'){
-		i++;
-	}
-	return(i);
-}
 
 char    *ft_strmapi(char const *s, char (*f)(unsigned int, char)){
     int i;

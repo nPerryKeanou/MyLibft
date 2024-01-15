@@ -1,16 +1,5 @@
 #include "libft.h"
 
-static size_t ft_strlen_const(const char   *str){
-	size_t i;
-
-	i = 0;
-	while(str[i] != '\0'){
-		i++;
-	}
-	return(i);
-}
-
-
 //function qui boucle sur une chaine de char.
 //le but est de comparer chaque caractere de str à chaque caracetere de set.
 //donc on a une boucle sur tout les char de set

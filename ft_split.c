@@ -1,13 +1,5 @@
 #include "libft.h"
 
-static size_t ft_strlen_const(const char *str){
-    size_t i = 0;
-    while (str[i] != '\0') {
-        i++;
-    }
-    return i;
-}
-
 static int ft_isSeparate(int chr, int c){
     return (unsigned char)chr == (unsigned char)c;
 }

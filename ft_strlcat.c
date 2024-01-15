@@ -1,25 +1,5 @@
 #include "libft.h"
 
-static size_t ft_strlen(char   *str){
-	size_t i;
-
-	i = 0;
-	while(str[i] != '\0'){
-		i++;
-	}
-	return(i);
-}
-
-static size_t ft_strlen_const(const char   *str){
-	size_t i;
-
-	i = 0;
-	while(str[i] != '\0'){
-		i++;
-	}
-	return(i);
-}
-
 /*
 La fonction strlcat fait partie de la famille de fonctions de manipulation de chaînes de caractères en C. 
 Elle est conçue pour résoudre certains des problèmes associés à l'utilisation des fonctions strncpy et strncat, 

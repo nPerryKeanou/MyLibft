@@ -9,7 +9,7 @@ VALEURS DE RETOUR
 La fonction strlen() renvoie le nombre de caractères qui précèdent le caractère NUL de terminaison.
  La fonction strnlen() renvoie soit le même résultat que strlen(), soit maxlen, selon lequel est plus petit.
 */
-size_t  ft_strlen(const char *s){
+size_t  ft_strlen(char *s){
     size_t i;
 
     i = 0;

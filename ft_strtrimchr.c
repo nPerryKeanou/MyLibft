@@ -1,17 +1,5 @@
 #include "libft.h"
 
-static size_t ft_strlen_const(const char   *str){
-	size_t i;
-
-	i = 0;
-	while(str[i] != '\0'){
-		i++;
-	}
-	return(i);
-}
-
-
-
 /*
 Cette fonction va supprimer tout les chars qui égalent int c en début et fin de chaine de s1.
 Cette fonction comporte plus de 25 ligne mais est très clair telle quelle.

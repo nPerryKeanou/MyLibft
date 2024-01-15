@@ -1,3 +1,5 @@
+#CEtte variable contient la liste des fichiers sources à nécéssaire pour constuire
+#ma lib.Les fichiers sont énumérés avec un backslash pour indiquer unec continuation de la ligne.
 SRCS = ft_atoi.c\
 			ft_bzero.c\
 			ft_calloc.c\
@@ -28,6 +30,7 @@ SRCS = ft_atoi.c\
 			ft_strlcat.c\
 			ft_strlcpy.c\
 			ft_strlen.c\
+			ft_strlen_const.c\
 			ft_strmapi.c\
 			ft_strncmp.c\
 			ft_strnstr.c\
@@ -39,15 +42,25 @@ SRCS = ft_atoi.c\
 			ft_tolower.c\
 			ft_toupper.c
 
+#Cette variable définit le compilateur à utiliser. Dans ce cas, c'est GCC.
 CC = gcc
 
-# UNE VARIABLE QUI CONTIENT LES OPTIONS DE COMPILATION.
+#Cette variable comporte des options de compilations.
+#'-Wall','-Wextra' et '-Werror' activent des avertissement du compilateur ('-Wall' et '-Wextra) et traitent 
+#les avertissements commes des erreurs ('-Werror').
 CFLAGS = -Wall -Wextra -Werror
 
+#Cette variable comporte le nom de la libft apèrs la compilations.
 NAME = libft.a
 
-OBJS_DIR = objs/
+#Cette variable sera le répertoires où seront stockés les fichiers objets générés lors de la compiltions.
+OBJS_DIR = objs/`
+
+#Cette variable utilise '$(SCRS:c=.O)' pour générer la liste des fichiers objets en remplaçant l'extension '.C' par '.O'
+#et en ajoutant le chemin du répertoires d'objets à l'aide de '$(addpréfix $(OBJS_DIR), ...). Les fichiers objets sont 
+#les fichiers compilés correspondants aux fichiers sources.
 OBJS = $(addprefix $(OBJS_DIR), $(notdir $(SRCS:.c=.o)))
+
 
 .PHONY: all clean fclean re
 

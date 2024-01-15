@@ -1,15 +1,5 @@
 #include "libft.h"
 
-static size_t ft_strlen_const(const char   *str){
-	size_t i;
-
-	i = 0;
-	while(str[i] != '\0'){
-		i++;
-	}
-	return(i);
-}
-
 size_t ft_startingtrim(const char *paramS1,  const char *paramSet){
 	size_t rslt;
 	size_t i;

@@ -1,24 +1,11 @@
 #include "libft.h"
 
-// * La fonction strchr recherche la derniére occurrence du caractère spécifié c dans la chaîne de caractères pointée par s. 
-//c'est la même chose que strchr mais, on décrémente à partir de la fin de la chaine.
-
-static size_t ft_strlen(char   *str){
-	size_t i;
-
-	i = 0;
-	while(str[i] != '\0'){
-		i++;
-	}
-	return(i);
-}
-
 char    *ft_strrchr(const char *s, int c){
     size_t i;
     size_t len_s;
 
-    i = ft_strlen(s);
-    len_s = ft_strlen(s);
+    i = ft_strlen_const(s);
+    len_s = ft_strlen_const(s);
     if(s == NULL){
         return(NULL);
     }
