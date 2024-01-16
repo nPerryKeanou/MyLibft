@@ -46,9 +46,12 @@ SRCS_BONUS = ft_lstnew.c\
 				ft_lstadd_front.c\
 				ft_lstsize.c\
 				ft_lstlast.c\
-				ft_lstadd_back\
+				ft_lstadd_back.c\
 				ft_lstdelone.c\
 				ft_lstclear.c\
+				ft_lstiter.c\
+				ft_lstmap.c
+
 
 
 #Cette variable définit le compilateur à utiliser. Dans ce cas, c'est GCC.
@@ -69,6 +72,7 @@ OBJS_DIR = objs/
 #et en ajoutant le chemin du répertoires d'objets à l'aide de '$(addpréfix $(OBJS_DIR), ...). Les fichiers objets sont 
 #les fichiers compilés correspondants aux fichiers sources.
 OBJS = $(addprefix $(OBJS_DIR), $(notdir $(SRCS:.c=.o)))
+OBJS_BONUS = $(addprefix $(OBJS_DIR), $(notdir $(SRCS_BONUS:.c=.o)))
 	
 #Ces cibles sont marquées comme des cibles "PHONY", ce qui signifies qu'elles ne correspondent pas à des fichiers réels.
 #Cela permet d'éviter des problèmes si des fichiers ou des répertoires portent le même nom.
@@ -92,6 +96,11 @@ $(OBJS_DIR):
 $(NAME): $(OBJS)
 	@ar rcs $@ $^
 	@echo "Libft Done !"
+
+bonus: $(OBJS_BONUS)
+		@ar rcs $@ $^
+		@echo "Libft Done !"
+
 #La règle pour supprimer les fichiers objets.
 clean:
 	@rm -rf $(OBJS_DIR)
