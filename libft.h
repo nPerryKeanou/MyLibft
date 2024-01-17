@@ -54,7 +54,8 @@ t_list  *ft_lstnew(void *content);
 t_list  *ft_lstlast(t_list *lst);
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 
-
+void    ft_putchar(char c);
+void    ft_putstr(char *str);
 void    *ft_memset(void *b, int c, size_t len);
 void    *ft_memcpy(void *restrict dst, const void *restrict src, size_t n);
 void    ft_bzero(void *s, size_t n);
