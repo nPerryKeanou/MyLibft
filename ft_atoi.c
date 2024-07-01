@@ -1,27 +1,5 @@
 #include "libft.h"
 
-/*
-
-La fonction atoi convertit la partie initiale d'une chaîne de caractères en une représentation entière (int). 
-Voici comment elle fonctionne :
-
-Elle parcourt la chaîne de caractères depuis le début jusqu'à ce qu'elle rencontre le premier caractère qui n'est pas un espace (' ')
- ou une caractère numérique.
-
-Elle interprète ensuite les caractères numériques consécutifs jusqu'à atteindre la fin de la séquence numérique ou 
-jusqu'à rencontrer un caractère non numérique.
-
-Elle convertit la séquence numérique en une valeur entière de type int.
-
-Elle retourne cette valeur entière.
-
-En cas d'erreur ou si la chaîne de caractères ne commence pas par une séquence numérique valide, la fonction retourne 0.
-
-Il est important de noter que la fonction atoi ne fournit pas de mécanisme robuste pour détecter les erreurs de conversion. 
-Si la chaîne de caractères ne peut pas être convertie correctement en un entier, atoi retourne simplement 0, 
-et il n'y a aucun moyen de différencier une conversion réussie d'une conversion qui a donné 0 comme résultat valide.
-*/
-
 long long int ft_atoi(const char *str){
     long long int result = 0;
     int i = 0;

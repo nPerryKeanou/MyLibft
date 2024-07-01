@@ -1,15 +1,4 @@
 #include "libft.h"
-/**
- * strnstr :
-
-Description : La fonction strnstr() localise la première occurrence de la chaîne de caractères null-terminée needle dans la chaîne de caractères haystack, 
-où au plus len caractères sont recherchés. 
-Les caractères qui apparaissent après un caractère \0 ne sont pas recherchés.
-Valeur de retour : Si needle est une chaîne vide, la fonction retourne haystack. 
-Si needle n'est trouvé nulle part dans les premiers len caractères de haystack, la fonction retourne NULL. 
-Sinon, un pointeur sur le premier caractère de la première occurrence de needle dans les premiers len caractères est renvoyé.
- * 
-*/
 
 char    *ft_strnstr(const char *haystack, const char *needle, size_t len){
     size_t i;

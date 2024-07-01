@@ -1,5 +1,5 @@
-#CEtte variable contient la liste des fichiers sources à nécéssaire pour constuire
-#ma lib.Les fichiers sont énumérés avec un backslash pour indiquer unec continuation de la ligne.
+#Cette variable contient la liste des fichiers sources à nécéssaire pour constuire ma lib.
+#Les fichiers sont énumérés avec un backslash pour indiquer unec continuation de la ligne.
 SRCS = ft_atoi.c\
 			ft_bzero.c\
 			ft_calloc.c\
@@ -80,10 +80,10 @@ OBJS_BONUS = $(addprefix $(OBJS_DIR), $(notdir $(SRCS_BONUS:.c=.o)))
 #Cela permet d'éviter des problèmes si des fichiers ou des répertoires portent le même nom.
 .PHONY: all clean fclean re
 
-#LA règle par défaut. LA cible 'all' dépend de la cible "$(NAME), donc éxecuter 'make' construira la bibliothèque.
+#La règle par défaut. La cible 'all' dépend de la cible "$(NAME), donc éxecuter 'make' construira la bibliothèque.
 all: $(NAME)
 
-#LA règle de compiltation des fichiers objets. Elle utilise le modéèle '%.O pour représenter tous les fichiers objets, et la dépendences
+#La règle de compiltation des fichiers objets. Elle utilise le modéèle '%.O pour représenter tous les fichiers objets, et la dépendences
 #'libft.h' indique que si 'libft.h' est modifié, le fichiers objets doivent être reconstruit.
 #La cible utilise aussi '$(OBJS_DIR) pour s'assurer que le répertoire des objets existe.
 $(OBJS_DIR)%.o : %.c | $(OBJS_DIR) libft.h

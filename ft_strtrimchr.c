@@ -1,10 +1,5 @@
 #include "libft.h"
 
-/*
-Cette fonction va supprimer tout les chars qui égalent int c en début et fin de chaine de s1.
-Cette fonction comporte plus de 25 ligne mais est très clair telle quelle.
-*/
-
 char    *ft_strtrimchr(const char *s1, int c){
 	size_t start;
 	size_t end;

@@ -2,11 +2,11 @@
 
 void    ft_lstadd_back(t_list **lst, t_list *new)
 {
-    if(lst == NULL || new == NULL)//vérifie si le pointeur vers la list ou si le nouveau maillon est null;
+    if(lst == NULL || new == NULL)
     {
         return;
     }
-    if(*lst == NULL)//vérifie si la list est vide.
+    if(*lst == NULL)
     {
         *lst = new;
         return;

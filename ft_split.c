@@ -9,11 +9,9 @@ static size_t ft_nbSep(const char *s, int c, size_t len_s){
     size_t i = 0;
 
     while (i < len_s) {
-        // Ignore leading separators
         while (i < len_s && ft_isSeparate(s[i], c)){
             i++;
         }
-        // Count separators
         while (i < len_s && !ft_isSeparate(s[i], c)){
             i++;
         }
@@ -45,25 +43,20 @@ char **ft_split(const char *s, int c){
     if (s == NULL){
         return NULL;
     }
-    // Allocation du tableau de pointeurs
     char **tabStr = (char **)malloc((nbSep + 1) * sizeof(char *));
     if (tabStr == NULL){
         return NULL;
     }
     while (i < len_s){
-        // Ignore leading separators
         while (i < len_s && ft_isSeparate(s[i], c)){
             i++;
         }
-        // Create string
         size_t start = i;
         while (i < len_s && !ft_isSeparate(s[i], c)){
             i++;
         }
-        // Allocate and store the string
         tabStr[iTab] = ft_strndup(s + start, i - start);
         if (tabStr[iTab] == NULL) {
-            // Free memory if allocation fails
             for (size_t j = 0; j < iTab; j++) {
                 free(tabStr[j]);
             }

@@ -1,10 +1,5 @@
 #include "libft.h"
 
-
-//ft_strmapi va lancer la fn pour chaque char dans un chaine de caractere.
-
-
-
 char    *ft_strmapi(char const *s, char (*f)(unsigned int, char)){
     int i;
     int len;

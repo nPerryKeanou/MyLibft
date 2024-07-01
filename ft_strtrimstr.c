@@ -86,27 +86,4 @@ char    *ft_strtrimstr(const char *s1, const char    *set){
 	}
 	str[i] = '\0';
 	return(str);
-
-	/**
-	 *     
-	size_t i = 0;
-    size_t start = (s1[i] != set[i]) ? 0 : ft_startingtrim(s1, set);
-    size_t end = (s1[ft_strlen_const(s1) - ft_strlen_const(set)] != set[i]) ? 0 : ft_endingtrim(s1, set);
-    size_t total = ft_strlen_const(s1) - start - end - 1;
-    char *str = (char *)malloc((total + 1) * sizeof(char));
-
-    if (str == NULL) {
-        return NULL;
-    }
-
-    while (s1[i] != '\0' && i < total) {
-        str[i] = s1[start];
-        i++;
-        start++;
-    }
-
-    str[i] = '\0';
-
-    return str;
-	*/
 }   

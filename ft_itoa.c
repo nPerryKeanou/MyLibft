@@ -1,18 +1,5 @@
 #include "libft.h"
 
-
-/**
-Alloue (avec malloc(3)) et retourne une chaîne
-de caractères représentant l’entier ’n’ reçu en
-argument. Les nombres négatifs doivent être gérés.
-*/
-//transformer chaque chiffre de nb en char.
-//pour check chaque chiffre un par un, je dois diviser le nb par 10 pour passer perdre une unités a chaque fois et faire le modulo 10
-//pour récuprer le reste de la division et de le transformer en char.
-//je dois aussi gerer les négatifs.
-//je dois aussi gerer que ce ne dépasse pas la valeurs des int (attentions selon le systeme d'exploitation et des valeurs des octets.)
-// valeur int max: 2147483647  && min : -2147483648
-
 long long ft_len_nb(int nb){
         long long i = 0;
     // Gérer le cas où nb est égal à zéro

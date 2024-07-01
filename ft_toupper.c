@@ -5,9 +5,5 @@ int ft_toupper(int c){
         c -= 32;
         return(unsigned char)c;
     }
-    // OU 
-    //if ((unsigned char)c >= 'a' && (unsigned char)c <= 'z') {
-    //   c -= 'a' - 'A';
-    //}
     return(c);
 }
