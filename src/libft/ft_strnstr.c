@@ -3,11 +3,9 @@
 char    *ft_strnstr(const char *haystack, const char *needle, size_t len){
     size_t i;
     size_t tmp;
-    size_t len_hays;
     size_t len_need;
 
     i = 0;
-    len_hays = ft_strlen_const(haystack);
     len_need = ft_strlen_const(needle);
     if(len_need == 0){
         return((char *)haystack);

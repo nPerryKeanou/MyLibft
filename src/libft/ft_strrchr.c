@@ -2,10 +2,8 @@
 
 char    *ft_strrchr(const char *s, int c){
     size_t i;
-    size_t len_s;
 
     i = ft_strlen_const(s);
-    len_s = ft_strlen_const(s);
     if(s == NULL){
         return(NULL);
     }

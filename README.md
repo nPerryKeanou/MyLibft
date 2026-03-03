@@ -1,51 +1,30 @@
-# MyLibft
- 
-### 1.  Prérequis
+# MyLibft - C Toolbelt 🛠️
 
-  Assurez-vous d'avoir `gcc` (GNU Compiler Collection) installé sur votre système. 
-  Vous pouvez vérifier son installation en exécutant la commande suivante : gcc --version
+This repository serves as my core foundation in C programming. It is a consolidated library gathering several key projects, built to be modular, efficient, and reusable.
 
-### 2.  Téléchargement
+> **Note:** This project is my personal training ground for mastering memory management and algorithms. While my current focus is shifting towards **Rust**, I maintain this library to sharpen my understanding of low-level software concepts.
 
-  Clonez ce dépôt en utilisant git : https://github.com/nPerryKeanou/MyLibft.git
+## 📦 Features
 
-### 3.  Compilation
+The `libft.a` library merges three essential modules:
 
-  Accédez au répertoire du projet et compilez la bibliothèque en utilisant make : 
-    cd libft/
-      make
+* **Libft:** A custom implementation of standard `libc` functions (string manipulation, memory management, linked lists).
+* **ft_printf:** A custom version of the famous formatting function, handling standard flags (`%c`, `%s`, `%p`, `%d`, `%i`, `%u`, `%x`, `%X`, `%%`).
+* **get_next_line:** A robust function that reads and returns a line from a file descriptor (FD), managing buffers and static variables.
 
-  Pour compiler également les fonctions bonus, utilisez :
-    cd libft/
-      make bonus
+## 🚀 Installation & Usage
 
-### 4.  Nettoyage
+The project uses an optimized `Makefile` for a clean and fast compilation process.
 
-  Pour supprimer les fichiers objets générés, utilisez :
-    make clean
+```bash
+# Clone the repository
+git clone https://github.com/nPerryKeanou/MyLibft.git && cd MyLibft
 
-  Pour supprimer les fichiers objets et la bibliothèque compilée, utilisez :
-    make fclean
+# Compile the library (generates libft.a)
+make
 
-  Pour reconstruire la bibliothèque à partir de zéro, utilisez :
-    make re
+# Clean object files (.o)
+make clean
 
-### 5.  Utilisation
-
-  Pour utiliser libft dans votre propre projet, vous devez inclure le fichier d'en-tête libft.h et 
-  lier votre projet avec la bibliothèque compilée libft.a.
-
-  Assurez-vous que libft.a et libft.h sont dans le même répertoire que vos fichiers source, 
-  ou modifiez les chemins d'inclusion et de liaison en conséquence.
-
-  Incluez libft.h dans vos fichiers source :
-    #include "libft.h"
-
-  Compilez votre projet en liant libft.a. Par exemple, si vous avez un fichier source main.c :
-    gcc -o my_program main.c libft.a -I.
-
-  L'option -I. indique au compilateur d'inclure le répertoire courant dans la recherche des fichiers d'en-tête.
-    
-### 6.  Contributions 
-
-  Les contributions sont les bienvenues ! N'hésitez pas à ouvrir une issue ou à soumettre une pull request.
+# Full cleanup and recompilation
+make re
