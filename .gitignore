@@ -1,0 +1,10 @@
+# macOS
+.DS_Store
+
+# IDE
+.vscode/
+
+# Compilation (très important pour un repo propre)
+obj/
+*.o
+*.a
